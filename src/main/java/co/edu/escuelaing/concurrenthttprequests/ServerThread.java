@@ -80,7 +80,6 @@ public class ServerThread implements Runnable {
             for (int i = hByte.length; i < hByte.length + bytesSource.length; i++) {
                 rta[i] = bytesSource[i - hByte.length];
             }
-            //System.out.println(rta.length);
             clientSocket.getOutputStream().write(rta);
             clientSocket.close();
         } catch (IOException ex) {

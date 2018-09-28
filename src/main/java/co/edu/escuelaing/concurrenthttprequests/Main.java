@@ -45,7 +45,7 @@ public class Main {
         
 
         Socket clientSocket = null;
-        ExecutorService executor = Executors.newFixedThreadPool(1);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         while (true){
             executor.execute(new ServerThread(serverSocket.accept()));           
         }

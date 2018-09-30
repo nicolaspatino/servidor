@@ -19,9 +19,9 @@ public class Cliente {
 
     public static void main(String[] args) throws IOException {
         
-        ExecutorService executor = Executors.newFixedThreadPool(5);
+        ExecutorService executor = Executors.newFixedThreadPool(15);
         int res = 0;
-        while (res<5){
+        while (res<15){
             executor.execute(new URLReader(args));
             res+=1;
         }

@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.escuelaing.concurrenthttprequests;
 
+import co.edu.escuelaing.reflexwebserver.Component;
+import co.edu.escuelaing.reflexwebserver.Mapping;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 /**
  *
  * @author Carlos Andres Castaneda Lozano
@@ -18,6 +14,7 @@ import java.util.concurrent.Executors;
  * Clase Main crea un servidor web capaz de responder peticiones
  * html y .png
  */
+@Component
 public class Main {
     /**
      *Metodo main, metodo principal de la clase HttpServer.
@@ -27,6 +24,8 @@ public class Main {
      * @param args
      * @throws IOException 
      */
+    
+    @Mapping("/results")
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         Integer port;

@@ -12,12 +12,17 @@ import java.util.concurrent.Executors;
 public class Cliente {
 
     public static void main(String[] args) throws IOException {
-
+        
         ExecutorService executor = Executors.newFixedThreadPool(5);
-        while (true) {
+        int res = 0;
+        while (res<5){
             executor.execute(new URLReader(args));
-
+            res+=1;
         }
+        executor.shutdown();
+        while (!executor.isTerminated()) {
+        }
+       
     }
 
 }

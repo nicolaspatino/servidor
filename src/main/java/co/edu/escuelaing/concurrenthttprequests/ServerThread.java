@@ -36,6 +36,7 @@ public class ServerThread implements Runnable {
      */
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String pathSource = in.readLine();
@@ -85,6 +86,7 @@ public class ServerThread implements Runnable {
         } catch (IOException ex) {
             Logger.getLogger(ServerThread.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("tiempo de ejecucion : " + startTime)
     }
 
 }

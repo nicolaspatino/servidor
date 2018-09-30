@@ -10,6 +10,12 @@ import java.util.concurrent.Executors;
  * @author Carlos Andres Castaneda Lozano
  */
 public class Cliente {
+    
+    /**
+     * 
+     * @param args
+     * @throws IOException 
+     */
 
     public static void main(String[] args) throws IOException {
         

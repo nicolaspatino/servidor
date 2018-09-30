@@ -12,13 +12,19 @@ import java.util.logging.Logger;
 public class URLReader implements Runnable {
 
     String[] args;
-
+    
     public URLReader(String[] args) {
         this.args = args;
     }
+    
+    /**
+     * Metodo run, corre los hilos de la clase Cliente y calcula
+     * los tiempo de ejecucion de cada hilo.
+     */
 
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
         URL url;
         try {
             url = new URL(args[0]);
@@ -34,7 +40,7 @@ public class URLReader implements Runnable {
         } catch (MalformedURLException ex) {
             Logger.getLogger(URLReader.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        System.out.println("tiempo de ejecucion : " + startTime);
     }
 
 }

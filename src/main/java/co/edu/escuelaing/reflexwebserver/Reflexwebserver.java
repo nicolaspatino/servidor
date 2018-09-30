@@ -8,9 +8,13 @@ import java.lang.reflect.Method;
  * @author Carlos Andres Castaneda Lozano
  */
 public class Reflexwebserver {
+    
+    /**
+     * @param args
+     * @throws Exception 
+     */
      public static void main(String[] args) throws Exception {
         
-        //Class c = Class.forName(args[0]);
         Class c = Class.forName("concurrenthttprequests.Main");
         for (Method m : c.getMethods()) {
             Constructor cons = c.getConstructor();
